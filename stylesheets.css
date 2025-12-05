@@ -1,0 +1,266 @@
+/* IMPORT GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* CSS VARIABLES FOR COLOR SCHEME */
+:root {
+    --greek-blue: #0057B7;
+    --greek-gold: #D4AF37;
+    --marble-white: #F5F5F0;
+    --charcoal: #333;
+    --light-blue: #e1efff;
+}
+
+/* GENERAL RESET & TYPOGRAPHY */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif; /* Body font */
+    background-color: var(--marble-white);
+    color: var(--charcoal);
+    line-height: 1.6;
+    /* Background pattern (optional texture) */
+    background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png'); 
+}
+
+/* HEADINGS - ANCIENT FEEL */
+h1, h2, h3 {
+    font-family: 'Cinzel', serif; /* Ancient look font */
+    color: var(--greek-blue);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+/* HEADER & NAV - FLEXBOX */
+header {
+    background: linear-gradient(to bottom, var(--greek-blue), #003366); /* CSS Gradient */
+    color: white;
+    padding: 1rem 0;
+    border-bottom: 5px solid var(--greek-gold);
+}
+
+.header-container {
+    display: flex; /* Flexbox Layout */
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 60px;
+    filter: drop-shadow(2px 2px 0px var(--greek-gold));
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Transition effect */
+}
+
+nav a:hover {
+    color: var(--greek-gold); /* Hover effect */
+    cursor: pointer; /* Cursor change */
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+/* HERO SECTION */
+.hero {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1560969184-10fe8719e654?q=80&w=1920');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 4rem;
+    text-shadow: 3px 3px 0 #000;
+}
+
+/* MAIN CONTAINER */
+.container {
+    width: 85%;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1); /* Box Shadow */
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+/* DECORATIVE COLUMNS (CSS Visual Trick) */
+.container::before, .container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 15px;
+    background: repeating-linear-gradient(
+      90deg,
+      #f0f0f0,
+      #f0f0f0 5px,
+      #ddd 5px,
+      #ddd 10px
+    );
+    border: 1px solid #ccc;
+}
+.container::before { left: -20px; }
+.container::after { right: -20px; }
+
+/* GRID LAYOUT FOR CARDS */
+.grid-3 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.card {
+    flex: 1 1 300px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease; /* Transition */
+    background-color: white;
+}
+
+.card:hover {
+    transform: scale(1.03) translateY(-5px); /* Transform: Scale */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--greek-gold);
+    margin-bottom: 15px;
+}
+
+/* TABLES */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: var(--greek-blue);
+    color: white;
+    font-family: 'Cinzel', serif;
+}
+
+tr:nth-child(even) {
+    background-color: var(--light-blue);
+}
+
+/* FORMS */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--light-blue);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--greek-blue);
+    border-radius: 4px;
+}
+
+button.submit-btn {
+    background-color: var(--greek-gold);
+    color: var(--charcoal);
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+}
+
+button.submit-btn:hover {
+    background-color: #b5952f;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--charcoal);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 5px solid var(--greek-gold);
+}
+
+/* Formatting tags styling */
+sup, sub {
+    color: var(--greek-blue);
+    font-weight: bold;
+}
+/* FIX HEADER TEXT READABILITY */
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-text h2 {
+    color: var(--greek-gold);      /* Changes text from white to Gold */
+    font-size: 2.5rem;             /* Makes the text significantly bigger */
+    font-weight: 700;              /* Bolder font weight */
+    text-shadow: 3px 3px 0px #000; /* Hard black shadow for high contrast */
+    letter-spacing: 2px;           /* Adds space between letters */
+    margin: 0;                     /* Removes default spacing */
+    line-height: 1;
+}
+
+.logo-text small {
+    color: white;                  /* Keeps the 'Est. 3000 BC' white */
+    font-size: 0.9rem;
+    letter-spacing: 4px;           /* Widespacing for a cinematic look */
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
